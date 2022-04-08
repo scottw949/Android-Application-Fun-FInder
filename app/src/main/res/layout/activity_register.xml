@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/big_bkg"
+    tools:context=".MainActivity">
+
+
+
+    <ImageView
+        android:id="@+id/logoIMG"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/new_app_logo"
+
+        ></ImageView>
+
+    <EditText
+        android:id="@+id/emailRegET"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/logoIMG"
+        android:textColorHint="@color/kit_grey"
+        android:textColor="@color/kit_grey">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/passRegET"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textColorHint="@color/kit_grey"
+        android:textSize="20sp"
+        android:textColor="@color/kit_grey"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/emailRegET"
+        android:layout_marginTop="20dp"
+        android:password="true"
+        ></EditText>
+
+    <EditText
+        android:id="@+id/nameRegET"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/passRegET"
+        android:layout_marginTop="20dp"
+        android:textColorHint="@color/kit_grey"
+        android:textColor="@color/kit_grey">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/registerBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/kit_dark"
+        android:layout_below="@+id/nameRegET"
+        android:text="Register"
+        android:textColor="@color/kit_teal"
+        android:layout_marginTop="45dp"
+        android:textSize="18sp"></Button>
+        <!--android:onClick="onClick"-->
+        <!--></Button>-->
+
+
+
+
+
+
+</RelativeLayout>

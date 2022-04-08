@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:background="@color/kit_grey"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:clickable="true"
+        app:cardCornerRadius="20dp"
+        android:elevation="50dp">
+
+        <ImageView
+        android:id="@+id/CVImageIV"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+
+        android:src="@drawable/pineapple"
+            ></ImageView>
+
+    </androidx.cardview.widget.CardView>
+    
+
+        <TextView
+            android:id="@+id/nameOfPlaceTV"
+            android:layout_width="185dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="130dp"
+            android:text="TITLE"
+            android:textSize="25dp"
+            android:textColor="@color/kit_dark"
+            android:layout_marginRight="7dp"
+            ></TextView>
+
+    <TextView
+        android:id="@+id/descriptionTV"
+        android:layout_width="185dp"
+        android:layout_height="55dp"
+        android:layout_below="@id/nameOfPlaceTV"
+        android:layout_marginLeft="130dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="2dp"
+        android:text="This is a description"
+        android:textColor="@color/kit_lightBlue"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/borderTV"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/descriptionTV"
+        android:textColor="@color/kit_dark"
+        android:text="----------------------------------------------------------------------------------------------------"
+        ></TextView>
+
+    <ImageView
+        android:id="@+id/clickButtonIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/blue_click_icon"
+        android:layout_marginLeft="325dp"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        ></ImageView>
+
+
+
+
+</RelativeLayout>
+

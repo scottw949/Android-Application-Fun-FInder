@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/big_bkg"
+    tools:context=".MainActivity">
+
+
+
+    <ImageView
+        android:id="@+id/logoIMG"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="-50dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/new_app_logo"
+
+        ></ImageView>
+
+    <EditText
+        android:id="@+id/emailET"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/logoIMG"
+        android:textColorHint="@color/kit_grey"
+        android:textColor="@color/kit_grey"
+        android:layout_marginTop="-35dp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/passET"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textColorHint="@color/kit_grey"
+        android:textSize="20sp"
+        android:textColor="@color/kit_grey"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/emailET"
+        android:layout_marginTop="20dp"
+        android:password="true"
+        ></EditText>
+
+        <Button
+            android:id="@+id/signInBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/kit_dark"
+            android:layout_below="@+id/passET"
+            android:text="SIGN IN"
+            android:textColor="@color/kit_teal"
+            android:layout_marginTop="35dp"
+            android:textSize="18sp"
+
+            ></Button>
+
+   <TextView
+       android:id="@+id/createTextTV"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Or create an account using the button below"
+       android:textColor="@color/kit_grey"
+       android:layout_centerHorizontal="true"
+       android:layout_below="@+id/signInBTN"
+       android:layout_marginTop="55dp"
+       android:textSize="12sp"
+       ></TextView>
+
+    <Button
+        android:id="@+id/registerActBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/kit_dark"
+        android:textColor="@color/kit_teal"
+        android:text="CREATE ACCOUNT"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/createTextTV"
+        android:layout_marginTop="10dp"
+
+        ></Button>
+
+
+
+
+
+</RelativeLayout>
