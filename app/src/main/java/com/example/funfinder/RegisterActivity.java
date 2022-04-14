@@ -2,6 +2,7 @@ package com.example.funfinder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -53,6 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     Toast.makeText(getApplicationContext(), "SUCCESSFULLY REGISTERED!", Toast.LENGTH_SHORT).show();
+                                    openMainActivity();
                                 }
                             });
 
@@ -80,4 +82,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         return true;
     } //end validate user input method
+
+    //back to main activity
+    public void openMainActivity()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    } //end openFavorites method
 }
