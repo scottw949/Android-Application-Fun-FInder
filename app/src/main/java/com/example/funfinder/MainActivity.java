@@ -19,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
     Button logIn;
     Button createAct;
 
+    //TODO: DELETE LATER
+    Button locationBTN;
+    //
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +34,22 @@ public class MainActivity extends AppCompatActivity {
 
         logIn = findViewById(R.id.signInBTN);
         createAct = findViewById(R.id.registerActBTN);
+
+        //TODO: DELETE LATER
+        locationBTN = findViewById(R.id.testerBTN);
+        //
+
+        //TODO: DELETE LATER
+        //open location activity when register button is clicked
+        locationBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                openLocationActivity();
+            }
+        });
+        //
+
 
 
         //open register activity when register button is clicked
@@ -103,4 +124,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     } //end open Register Activity
+
+    //TODO: DELETE LATER
+    public void openLocationActivity()
+    {
+        Intent intent = new Intent(this, LocationActivity.class);
+        startActivity(intent);
+    } //end open Register Activity
+    //
+
 }

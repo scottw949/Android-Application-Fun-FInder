@@ -6,16 +6,18 @@ public class FavoritesModel
     private String placeDescription;
     private int placeIMG;
     private int clickIMG;
+    private int heartIMG;
     private String border;
 
     //constructor
 
 
-    public FavoritesModel(String placeName, String placeDescription, int placeIMG, int clickIMG, String border) {
+    public FavoritesModel(String placeName, String placeDescription, int placeIMG, int clickIMG, int heartIMG, String border) {
         this.placeName = placeName;
         this.placeDescription = placeDescription;
         this.placeIMG = placeIMG;
         this.clickIMG = clickIMG;
+        this.heartIMG = heartIMG;
         this.border = border;
     }
 

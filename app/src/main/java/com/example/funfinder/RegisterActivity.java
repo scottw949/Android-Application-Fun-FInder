@@ -87,6 +87,10 @@ public class RegisterActivity extends AppCompatActivity {
     public void openMainActivity()
     {
         Intent intent = new Intent(this, MainActivity.class);
+
+        /*startActivity(intent);*/
+        intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+
     } //end openFavorites method
 }
