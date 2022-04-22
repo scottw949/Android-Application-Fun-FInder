@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -24,7 +25,8 @@ public class FavoritesActivity extends AppCompatActivity {
     String border = "----------------------------------------------------------------------------------------------------";
 
     Button toFavBTN;
-    ImageView heartIV;
+    ImageButton heartIV;
+
 
 
     @Override
@@ -33,7 +35,14 @@ public class FavoritesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_favorites);
 
         toFavBTN = findViewById(R.id.toUserFavBTN);
-        heartIV = findViewById(R.id.heartIV);
+        //heartIV = findViewById(R.id.heartIV);
+
+       /* heartIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                heartIV.setImageResource(R.drawable.red_heart);
+            }
+        }); */
 
 
 

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +16,9 @@ import java.util.List;
 // <FavoritesViewHolder> ---------------------------------------- |
 public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesViewHolder>
 {
+    public ImageView heartImage;
+
+
     private List<FavoritesModel> favoritesList;
 
     public FavoritesAdapter(List<FavoritesModel>favoritesList)
@@ -45,6 +49,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesViewHolder>
         holder.border.setText(favoritesList.get(position).getBorder());
         holder.placeIMG.setImageResource(favoritesList.get(position).getPlaceIMG());
         holder.clickIMG.setImageResource(favoritesList.get(position).getClickIMG());
+        holder.heartIMG.setImageResource(favoritesList.get(position).getHeartIMG());
 
 
     }
@@ -53,4 +58,9 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesViewHolder>
     public int getItemCount() {
         return favoritesList.size();
     }
+
+
+
+
+
 } //end of class

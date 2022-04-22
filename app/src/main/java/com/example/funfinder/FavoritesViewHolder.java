@@ -15,6 +15,7 @@ public class FavoritesViewHolder extends RecyclerView.ViewHolder
     public ImageView placeIMG;
     public ImageView clickIMG;
     public TextView border;
+    public ImageView heartIMG;
 
     public FavoritesViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -24,5 +25,7 @@ public class FavoritesViewHolder extends RecyclerView.ViewHolder
         placeIMG = itemView.findViewById(R.id.CVImageIV);
         clickIMG = itemView.findViewById(R.id.clickButtonIV);
         border = itemView.findViewById(R.id.borderTV);
+        heartIMG = itemView.findViewById(R.id.heartIV);
+
     } //end of constructor
 } //end of class
