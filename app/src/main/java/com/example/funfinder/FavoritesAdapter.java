@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -16,14 +17,16 @@ import java.util.List;
 // <FavoritesViewHolder> ---------------------------------------- |
 public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesViewHolder>
 {
-    public ImageView heartImage;
 
 
     private List<FavoritesModel> favoritesList;
 
-    public FavoritesAdapter(List<FavoritesModel>favoritesList)
+    public static RVClickInterface rvClickInterface;
+
+    public FavoritesAdapter(List<FavoritesModel>favoritesList, RVClickInterface rvClickInterface)
     {
         this.favoritesList = favoritesList;
+        this.rvClickInterface = rvClickInterface;
     }
 
     @NonNull
@@ -35,15 +38,6 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull FavoritesViewHolder holder, int position) {
-       /* int placeIMG = favoritesList.get(position).getPlaceIMG();
-        int clickIMG = favoritesList.get(position).getClickIMG();
-        String placeName = favoritesList.get(position).getPlaceName();
-        String placeDescription = favoritesList.get(position).getPlaceDescription();
-        String border = favoritesList.get(position).getBorder();
-
-        holder.setData(placeIMG, clickIMG, placeName, placeDescription, border); */
-
-
         holder.placeName.setText(favoritesList.get(position).getPlaceName());
         holder.placeDescription.setText(favoritesList.get(position).getPlaceDescription());
         holder.border.setText(favoritesList.get(position).getBorder());
@@ -58,9 +52,5 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesViewHolder>
     public int getItemCount() {
         return favoritesList.size();
     }
-
-
-
-
 
 } //end of class

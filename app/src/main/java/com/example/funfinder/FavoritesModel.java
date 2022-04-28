@@ -1,15 +1,11 @@
 package com.example.funfinder;
 
-import android.widget.ImageView;
-
 public class FavoritesModel
 {
     private String placeName;
     private String placeDescription;
     private int placeIMG;
     private int clickIMG;
-
-
     private int heartIMG;
     private String border;
 
@@ -33,9 +29,7 @@ public class FavoritesModel
         return heartIMG;
     }
 
-    public void setHeartIMG(int heartIMG) {
-        this.heartIMG = heartIMG;
-    }
+    public void setHeartIMG(int heartIMG) { this.heartIMG = heartIMG; }
 
 
 
@@ -79,4 +73,6 @@ public class FavoritesModel
     public void setClickIMG(int clickIMG) {
         this.clickIMG = clickIMG;
     }
+
+
 }

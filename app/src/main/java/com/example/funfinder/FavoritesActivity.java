@@ -1,5 +1,6 @@
 package com.example.funfinder;
 
+import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,16 +17,20 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FavoritesActivity extends AppCompatActivity {
+public class FavoritesActivity extends AppCompatActivity implements RVClickInterface {
 
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
-    List<FavoritesModel> favoritesList;
+    public List<FavoritesModel> favoritesList;
     FavoritesAdapter adapter;
     String border = "----------------------------------------------------------------------------------------------------";
 
     Button toFavBTN;
-    ImageButton heartIV;
+    ImageView heartIV;
+
+    public static ArrayList<FavoritesModel> tempList = new ArrayList<>();
+
+    //UserFavActivity userFavActivity = new UserFavActivity();
 
 
 
@@ -35,15 +40,7 @@ public class FavoritesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_favorites);
 
         toFavBTN = findViewById(R.id.toUserFavBTN);
-        //heartIV = findViewById(R.id.heartIV);
-
-       /* heartIV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                heartIV.setImageResource(R.drawable.red_heart);
-            }
-        }); */
-
+        heartIV = findViewById(R.id.heartIV);
 
 
         toFavBTN.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +54,8 @@ public class FavoritesActivity extends AppCompatActivity {
         initData();
         initRecyclerView();
 
-    }
+    } //end on create
+
 
     private void initData()
     {
@@ -95,9 +93,10 @@ public class FavoritesActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new FavoritesAdapter(favoritesList);
+        adapter = new FavoritesAdapter(favoritesList, this);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
     } //end init recycler view
 
     public void openUserFavActivity()
@@ -106,6 +105,41 @@ public class FavoritesActivity extends AppCompatActivity {
         startActivity(intent);
     } //end open userFaveActivity
 
+    @Override
+    public void onItemClick(int position)
+    {
+
+
+        Toast.makeText(this, "ADDED TO FAVORITES", Toast.LENGTH_SHORT).show();
+
+        //TODO ~~ may not work
+        String placeName = favoritesList.get(position).getPlaceName();
+        String placeDescription = favoritesList.get(position).getPlaceDescription();
+        int placeIMG = favoritesList.get(position).getPlaceIMG();
+        int clickIMG = favoritesList.get(position).getClickIMG();
+        int heartIMG = R.drawable.red_heart;
+        String border = favoritesList.get(position).getBorder();
+
+        addToList(placeName, placeDescription, placeIMG, clickIMG, heartIMG, border);
+
+        /*runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                userFavActivity.userFavList.add(new FavoritesModel(placeName, placeDescription, placeIMG, clickIMG, heartIMG, border));
+                userFavActivity.adapter.notifyItemInserted(position);
+            }
+        });
+        //userFavActivity.userFavList.add(new FavoritesModel(placeName, placeDescription, placeIMG, clickIMG, heartIMG, border));
+        //userFavActivity.adapter.notifyItemInserted(position);*/
+
+    }
+
+    public void addToList(String placeName, String placeDesc, int placeIMG, int clickIMG, int heartIMG, String border)
+    {
+        //tempList = new ArrayList<>();
+
+        tempList.add(new FavoritesModel(placeName, placeDesc, placeIMG, clickIMG, heartIMG, border));
+    }
 
 
 }
