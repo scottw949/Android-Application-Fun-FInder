@@ -111,10 +111,7 @@ public class FavoritesActivity extends AppCompatActivity implements RVClickInter
     {
 
         Toast.makeText(this, "OPENING GOOGLE MAPS", Toast.LENGTH_SHORT).show();
-       /* Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("google.navigation:q=32.776566, -79.930923&mode=d"));
 
-        intent.setPackage("com.google.android.apps."); */
 
         Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
         intent.setData(Uri.parse("geo:" + favoritesList.get(position).getLat() + "," + favoritesList.get(position).getLongitude()));

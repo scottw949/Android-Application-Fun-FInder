@@ -32,14 +32,15 @@ public class FavoritesModel
 
 
     //constructor
-    public FavoritesModel(String placeName, String placeDescription, int placeIMG, int clickIMG, int heartIMG, String border, double lat, double longitutde) {
+    public FavoritesModel(String placeName, String placeDescription, int placeIMG, int clickIMG, int heartIMG, String border, double lat, double longitude) {
         this.placeName = placeName;
         this.placeDescription = placeDescription;
         this.placeIMG = placeIMG;
         this.clickIMG = clickIMG;
         this.heartIMG = heartIMG;
         this.border = border;
-
+        this.lat = lat;
+        this.longitude = longitude;
 
     }
 

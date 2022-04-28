@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -65,6 +67,15 @@ public class UserFavActivity extends AppCompatActivity implements RVClickInterfa
     public void onItemClick(int position)
     {
         Toast.makeText(this, "OPENING GOOGLE MAPS", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("geo:" + userFavList.get(position).getLat() + "," + userFavList.get(position).getLongitude()));
+        startActivity(intent);
+
+        if(intent.resolveActivity(getPackageManager()) != null)
+        {
+            startActivity(intent);
+        }
 
     }
 
