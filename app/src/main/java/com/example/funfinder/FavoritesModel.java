@@ -8,12 +8,31 @@ public class FavoritesModel
     private int clickIMG;
     private int heartIMG;
     private String border;
+    private double lat;
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    private double longitude;
 
     //TRY THIS
 
 
     //constructor
-    public FavoritesModel(String placeName, String placeDescription, int placeIMG, int clickIMG, int heartIMG, String border) {
+    public FavoritesModel(String placeName, String placeDescription, int placeIMG, int clickIMG, int heartIMG, String border, double lat, double longitutde) {
         this.placeName = placeName;
         this.placeDescription = placeDescription;
         this.placeIMG = placeIMG;
