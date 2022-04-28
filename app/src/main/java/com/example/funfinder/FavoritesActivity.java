@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -109,6 +110,31 @@ public class FavoritesActivity extends AppCompatActivity implements RVClickInter
     public void onItemClick(int position)
     {
 
+        Toast.makeText(this, "OPENING GOOGLE MAPS", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("google.navigation:q=32.776566, -79.930923&mode=d"));
+
+        intent.setPackage("com.google.android.apps.");
+
+        if(intent.resolveActivity(getPackageManager()) != null)
+        {
+            startActivity(intent);
+        }
+
+
+    }
+
+
+    public void addToList(String placeName, String placeDesc, int placeIMG, int clickIMG, int heartIMG, String border)
+    {
+
+        tempList.add(new FavoritesModel(placeName, placeDesc, placeIMG, clickIMG, heartIMG, border));
+    }
+
+
+    @Override
+    public void onLongClick(int position)
+    {
 
         Toast.makeText(this, "ADDED TO FAVORITES", Toast.LENGTH_SHORT).show();
 
@@ -121,24 +147,6 @@ public class FavoritesActivity extends AppCompatActivity implements RVClickInter
         String border = favoritesList.get(position).getBorder();
 
         addToList(placeName, placeDescription, placeIMG, clickIMG, heartIMG, border);
-
-        /*runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                userFavActivity.userFavList.add(new FavoritesModel(placeName, placeDescription, placeIMG, clickIMG, heartIMG, border));
-                userFavActivity.adapter.notifyItemInserted(position);
-            }
-        });
-        //userFavActivity.userFavList.add(new FavoritesModel(placeName, placeDescription, placeIMG, clickIMG, heartIMG, border));
-        //userFavActivity.adapter.notifyItemInserted(position);*/
-
-    }
-
-    public void addToList(String placeName, String placeDesc, int placeIMG, int clickIMG, int heartIMG, String border)
-    {
-        //tempList = new ArrayList<>();
-
-        tempList.add(new FavoritesModel(placeName, placeDesc, placeIMG, clickIMG, heartIMG, border));
     }
 
 

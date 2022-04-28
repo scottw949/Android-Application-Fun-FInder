@@ -43,16 +43,7 @@ public class UserFavActivity extends AppCompatActivity implements RVClickInterfa
         {
             userFavList.addAll(FavoritesActivity.tempList);
         }
-        //userFavList = new ArrayList<>();
 
-        //userFavList.add(new FavoritesModel("Leon's", "Leon's is fine seafood and poultry dining that encapsulates southern living.",
-               // R.drawable.leons, R.drawable.blue_click_icon, R.drawable.red_heart, border));
-
-        //userFavList.add(new FavoritesModel("Poe's", "Leon's is fine seafood and poultry dining that encapsulates southern living.",
-                //R.drawable.leons, R.drawable.blue_click_icon, R.drawable.red_heart, border));
-
-
-        //userFavList.addAll(FavoritesActivity.tempList);
 
         Log.d("BTN CLICK", "created new RV");
 
@@ -73,9 +64,18 @@ public class UserFavActivity extends AppCompatActivity implements RVClickInterfa
     @Override
     public void onItemClick(int position)
     {
+        Toast.makeText(this, "OPENING GOOGLE MAPS", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onLongClick(int position)
+    {
         Toast.makeText(this, "ITEM DELETED FROM FAVORITES", Toast.LENGTH_SHORT).show();
         userFavList.remove(position);
         FavoritesActivity.tempList.remove(position);
         adapter.notifyItemRemoved(position);
+
+
     }
 } //end class
