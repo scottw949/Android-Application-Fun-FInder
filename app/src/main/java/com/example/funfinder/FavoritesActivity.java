@@ -41,7 +41,7 @@ public class FavoritesActivity extends AppCompatActivity implements RVClickInter
         setContentView(R.layout.activity_favorites);
 
         toFavBTN = findViewById(R.id.toUserFavBTN);
-        heartIV = findViewById(R.id.heartIV);
+        //heartIV = findViewById(R.id.heartIV);
 
 
         toFavBTN.setOnClickListener(new View.OnClickListener() {

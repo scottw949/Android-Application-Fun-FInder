@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,14 +24,33 @@ public class UserFavActivity extends AppCompatActivity implements RVClickInterfa
     public FavoritesAdapter adapter;
     String border = "----------------------------------------------------------------------------------------------------";
     //FavoritesActivity favoritesActivity = new FavoritesActivity();
-
+    Button cameraBTN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_fav);
 
-        Log.d("BTN CLICK", "created new act");
+        //Log.d("BTN CLICK", "created new act");
+        cameraBTN = findViewById(R.id.cameraBTN);
+
+        cameraBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                try
+                {
+                    Intent intent = new Intent();
+                    intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivity(intent);
+
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }); //end camera on click listener
 
         initData();
         initRecyclerView();

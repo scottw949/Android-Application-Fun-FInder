@@ -7,6 +7,20 @@
     android:background="@color/kit_grey"
     tools:context=".UserFavActivity">
 
+    <Button
+        android:id="@+id/cameraBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera"
+        android:textSize="20sp"
+        android:backgroundTint="@color/kit_dark"
+        android:textColor="@color/kit_teal"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="525dp"
+
+        ></Button>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/userFavRV"
         android:layout_width="match_parent"
