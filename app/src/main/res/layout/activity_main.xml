@@ -87,12 +87,7 @@
 
         ></Button>
 
-    <Button
-        android:id="@+id/testerBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="get location"
-        ></Button>
+
 
 
 

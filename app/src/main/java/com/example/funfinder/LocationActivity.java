@@ -49,6 +49,7 @@ public class LocationActivity extends AppCompatActivity {
         longitudeTV = findViewById(R.id.longitudeTV);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
+
         //set on click listener
         locationBTN.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -36,19 +36,19 @@ public class MainActivity extends AppCompatActivity {
         createAct = findViewById(R.id.registerActBTN);
 
         //TODO: DELETE LATER
-        locationBTN = findViewById(R.id.testerBTN);
+        //locationBTN = findViewById(R.id.testerBTN);
         //
 
         //TODO: DELETE LATER
         //open location activity when register button is clicked
-        locationBTN.setOnClickListener(new View.OnClickListener() {
+       /* locationBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
                 openLocationActivity();
             }
         });
-        //
+        // */
 
 
 
