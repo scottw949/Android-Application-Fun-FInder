@@ -1,11 +1,13 @@
 package com.example.funfinder;
 
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withInputType;
 
 import androidx.test.espresso.Espresso;
 import androidx.test.espresso.ViewAction;
+import androidx.test.espresso.action.ViewActions;
 import androidx.test.rule.ActivityTestRule;
 
 import org.junit.After;
@@ -19,17 +21,20 @@ public class MainActivityTest {
     public ActivityTestRule<MainActivity> mainActivityActivityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
     //private MainActivity mainActivity = null;
 
-    private String email = "scott@gmail.com";
-    private String pass = "Scott3!";
+    private final String email = "scott@gmail.com";
+    private final String pass = "Scott3!";
+    private final String regEmail = "Test@gmail.com";
+    private final String regPass = "Test1!";
+    private final String regName = "Scott";
 
     @Before
     public void setUp() throws Exception
     {
-        //mainActivity = mainActivityActivityTestRule.getActivity();
+
     }
 
     @Test
-    public void testLogIn()
+    public void unitTestLogIn()
     {
 
         Espresso.onView(withId(R.id.emailET)).perform(typeText(email));
@@ -38,7 +43,47 @@ public class MainActivityTest {
 
         Espresso.onView(withId(R.id.passET)).perform(typeText(pass));
 
-        Espresso.onView(withId(R.id.signInBTN)).perform();
+        Espresso.closeSoftKeyboard();
+
+        Espresso.onView(withId(R.id.signInBTN)).perform(ViewActions.click());
+    }
+
+    @Test
+    public void integrationTest()
+    {
+
+        //sign in page --> create account page
+        Espresso.onView(withId(R.id.registerActBTN)).perform(ViewActions.click());
+
+        Espresso.onView(withId(R.id.emailRegET)).perform(typeText(regEmail));
+
+        Espresso.closeSoftKeyboard();
+
+        Espresso.onView(withId(R.id.passRegET)).perform(typeText(regPass));
+
+        Espresso.closeSoftKeyboard();
+
+        Espresso.onView(withId(R.id.nameRegET)).perform(typeText(regName));
+
+        Espresso.closeSoftKeyboard();
+
+        //create account page --> sign in page
+        Espresso.onView(withId(R.id.registerBTN)).perform(ViewActions.click());
+
+        Espresso.onView(withId(R.id.emailET)).perform(typeText(regEmail));
+
+        Espresso.closeSoftKeyboard();
+
+        Espresso.onView(withId(R.id.passET)).perform(typeText(regPass));
+
+        Espresso.closeSoftKeyboard();
+
+
+        // sign in page --> nearBy activity page
+        Espresso.onView(withId(R.id.signInBTN)).perform(ViewActions.click());
+
+
+
 
 
     }
@@ -48,12 +93,8 @@ public class MainActivityTest {
     @After
     public void tearDown() throws Exception
     {
-        //mainActivity = null;
+
     }
 
-    /* testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation 'com.android.support.test:rules:1.0.2'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'*/
+
 }
