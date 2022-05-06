@@ -19,9 +19,6 @@ public class MainActivity extends AppCompatActivity {
     Button logIn;
     Button createAct;
 
-    //TODO: DELETE LATER
-    Button locationBTN;
-    //
 
 
     @Override
